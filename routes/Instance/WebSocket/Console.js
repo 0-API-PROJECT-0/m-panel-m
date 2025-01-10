@@ -30,7 +30,7 @@ router.ws("/console/:id", async (ws, req) => {
     };
 
     socket.onerror = (error) => {
-        ws.send('\x1b[31;1mAPI CLOUD instance appears to be down')
+        ws.send('\x1b[31;1mHydraDaemon instance appears to be down')
     };
 
     socket.onclose = (event) => {};

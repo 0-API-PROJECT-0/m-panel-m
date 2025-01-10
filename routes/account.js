@@ -31,7 +31,7 @@ router.get('/account', async (req, res) => {
     req,
     user: req.user,
     users: await db.get('users') || [], 
-    name: await db.get('name') || 'API CLOUD',
+    name: await db.get('name') || 'HydraPanel',
     logo: await db.get('logo') || false
   });
 });
@@ -119,8 +119,8 @@ router.get('/enable-2fa', async (req, res) => {
         const currentUser = users.find(user => user.username === req.user.username);
         const secret = speakeasy.generateSecret({
             length: 20,
-            name: `API CLOUD (${currentUser.username})`,
-            issuer: 'API CLOUD'
+            name: `HydraPanel (${currentUser.username})`,
+            issuer: 'HydraPanel'
         });
 
 
@@ -138,7 +138,7 @@ router.get('/enable-2fa', async (req, res) => {
             res.render('enable-2fa', {
                 req,
                 user: req.user,
-                users, name: await db.get('name') || 'API CLOUD',
+                users, name: await db.get('name') || 'HydraPanel',
                 logo: await db.get('logo') || false,
                 qrCode: data_url
             });

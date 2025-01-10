@@ -32,7 +32,7 @@ router.get('/instance/:id/users', async (req, res) => {
             req,
             instance,
             user: req.user,
-            name: await db.get('name') || 'API CLOUD',
+            name: await db.get('name') || 'HydraPanel',
             logo: await db.get('logo') || false,
             users,
             addons: {
