@@ -62,7 +62,7 @@ router.get("/instance/:id/archives", async (req, res) => {
                     req, 
                     user: req.user, 
                     instance,
-                    name: await db.get('name') || 'HydraPanel',
+                    name: await db.get('name') || 'ApiCloud',
                     logo: await db.get('logo') || false, 
                     archives, 
                     settings,
